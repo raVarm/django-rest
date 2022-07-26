@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myapp</title>
+</head>
+<body>
+    <center>
+    <table border=1 cellpadding=5 cellspacing=0>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Check in</th>
+            <th>Check out</th>
+            <th>Service Man</th>
+            <th>Cost</th>
+        </tr>
+        {% for i in userdata %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.service}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.check_in}}</td>
+            <td>{{i.check_out}}</td>
+            <td>{{i.service_man}}</td>
+            <td>{{i.cost}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr width=42%>
+    <div>
+        <a href="{% url 'home' %}">Add Data</a>
+    </div>
+</center>
+</body>
+</html>
